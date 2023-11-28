@@ -1,7 +1,7 @@
 # Board_hardCoding
 
 #### 게시판<br>
-실 프로젝트 진행 전 간단히 CRUD를 구현해보며 전체틀을 이해하기 위함을 목적으로 한다.<br>
+실 프로젝트 진행 전 간단히 CRUD를 구현해보며 전체 틀을 이해하기 위함을 목적으로 한다.<br>
 일정 및 기획은 NOTION에 간단히 기록하며 진행하고<br>
 과정은 기존 운영하던 블로그에 기록한다.<br>
 
@@ -19,26 +19,26 @@ FrameWork: Spring, Mybatis, Tiles
 
 <hr>
 #### 구현과정 - SVN<br>
-이론정리: https://standout.tistory.com/1090<br>
-svn 구축: https://standout.tistory.com/1092<br>
-Tortoise svn 사용: https://standout.tistory.com/1091<br>
-Eclipse SVN 연동하기 - chekout: https://standout.tistory.com/1093<br>
+이론정리: <br>https://standout.tistory.com/1090<br>
+svn 구축: <br>https://standout.tistory.com/1092<br>
+Tortoise svn 사용: <br>https://standout.tistory.com/1091<br>
+Eclipse SVN 연동하기 - chekout: <br>https://standout.tistory.com/1093<br>
 svn Eclipse 연동 및 세팅:<br>
 https://standout.tistory.com/1095<br>
 https://standout.tistory.com/1096
 <br><br>
 
 #### 구현과정 - 세부기록<br>
-프로젝트 생성: https://standout.tistory.com/1094<br>
-테이블 sql 생성: https://standout.tistory.com/1098, https://standout.tistory.com/1100<br>
-Maria DB 설치/세팅: https://standout.tistory.com/1097<br>
-Maria DB + Eclipse connecting: https://standout.tistory.com/1099, https://standout.tistory.com/1101, https://standout.tistory.com/1102<br>
-Maven 프로젝트로 변경 - pom.xml 작성: https://standout.tistory.com/1103, https://standout.tistory.com/1104, https://standout.tistory.com/1106<br>
-spring 프레임워크 추가: https://standout.tistory.com/1105<br>
-MVC: https://standout.tistory.com/1108<br>
-DB 연결테스트 JDBC: https://standout.tistory.com/1109, https://standout.tistory.com/1110<br>
-MyBatis 설정: https://standout.tistory.com/1112, https://standout.tistory.com/1113, https://standout.tistory.com/1111<br>
-tiles 설정: https://standout.tistory.com/1118<br>
+프로젝트 생성: <br>https://standout.tistory.com/1094<br>
+테이블 sql 생성: <br>https://standout.tistory.com/1098, <br>https://standout.tistory.com/1100<br>
+Maria DB 설치/세팅: <br>https://standout.tistory.com/1097<br>
+Maria DB + Eclipse connecting: <br>https://standout.tistory.com/1099, <br>https://standout.tistory.com/1101, <br>https://standout.tistory.com/1102<br>
+Maven 프로젝트로 변경 - pom.xml 작성: <br>https://standout.tistory.com/1103, <br>https://standout.tistory.com/1104, <br>https://standout.tistory.com/1106<br>
+spring 프레임워크 추가: <br>https://standout.tistory.com/1105<br>
+MVC: <br>https://standout.tistory.com/1108<br>
+DB 연결테스트 JDBC: <br>https://standout.tistory.com/1109, <br>https://standout.tistory.com/1110<br>
+MyBatis 설정: <br>https://standout.tistory.com/1112, <br>https://standout.tistory.com/1113, <br>https://standout.tistory.com/1111<br>
+tiles 설정: <br>https://standout.tistory.com/1118<br>
 <br><br>
 리스트 - 리스트띄우기: https://standout.tistory.com/1132<br>
 리스트 - 검색: https://standout.tistory.com/1137<br>
