@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sanghee.board">
+
+	<resultMap type="BoardVO" id="boardResult">
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="text" column="text" />
+		<result property="writeDate" column="writeDate" />
+		<result property="count" column="count" />
+	</resultMap>
+
+
+	<select id="totalList" resultType="int"
+		parameterType="java.util.Map">
+		SELECT COUNT(*)
+		FROM board
+		<if test="searchText != null and !searchText.isEmpty()">
+			where LOWER(${selectField}) LIKE LOWER(CONCAT('%',
+			#{searchText}, '%'))
+		</if>
+	</select>
+
+
+	<select id="list" resultType="BoardVO"
+		parameterType="java.util.Map">
+		SELECT *
+		FROM board
+		<if test="searchText != null and !searchText.isEmpty()">
+			where LOWER(${selectField}) LIKE LOWER(CONCAT('%',
+			#{searchText}, '%'))
+		</if>
+		LIMIT #{startRecord}, #{pageSize}
+	</select>
+
+
+
+	<select id="search" resultMap="boardResult">
+	<![CDATA[
+		SELECT * FROM board
+		WHERE LOWER(#{search_field}) LIKE LOWER('%#{search_text}%');
+	]]>
+	</select>
+
+	<insert id="write" parameterType="java.util.Map">
+    <![CDATA[
+        INSERT INTO board (title, text)
+        VALUES (#{title}, #{text})
+    ]]>
+	</insert>
+
+
+	<select id="sub" resultMap="boardResult"
+		parameterType="java.util.Map">
+	  <![CDATA[
+		SELECT * FROM board where id = #{id}
+		]]>
+	</select>
+
+	<update id="save" parameterType="java.util.Map">
+	  <![CDATA[
+	    UPDATE board
+	    SET title = #{title}, text = #{text}
+	    WHERE id = #{id}
+	    ]]>
+	</update>
+
+
+	<delete id="delete" parameterType="java.util.Map">
+    <![CDATA[
+        DELETE FROM board
+        WHERE id = #{id}
+    ]]>
+	</delete>
+
+
+</mapper>

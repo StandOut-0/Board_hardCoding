@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+* {font-family: 'Pretendard Variable';}
+.bg-ddd{background: #ddd}
+.btn:not(.pagination .btn) {min-width: 120px;}
+a{color: inherit; text-decoration: none}
+.m-width-fit-content{min-width: fit-content!important; max-width: fit-content!important;}
+table *{font-size: 13px}
+tbody tr{cursor: pointer}

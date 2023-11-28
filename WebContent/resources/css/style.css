@@ -1,0 +1,102 @@
+ .wrap {
+  text-align: center;
+  font-family: "Pretendard", sans-serif;
+}
+
+#contents {
+  width: 1280px;
+  margin: 0 auto;
+}
+#contents .board h3 {
+  padding: 100px;
+  font-size: 50px;
+  line-height: 160%;
+  position: relative;
+}
+#contents .board h3::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  bottom: 0;
+  width: 1px;
+  height: 60px;
+  background: #ccc;
+}
+#contents .board .summary {
+  padding: 40px 0 100px;
+}
+#contents .board .summary p {
+  font-size: 36px;
+  line-height: 160%;
+}
+#contents .board .summary span {
+  font-size: 20px;
+  line-height: 160%;
+  font-weight: 300;
+}
+#contents .board table {
+  width: 100%;
+  border-top: 1px solid #999;
+}
+#contents .board table thead {
+  background: #f2f2f2;
+}
+#contents .board table th {
+  padding: 30px;
+  border-bottom: 1px solid #ddd;
+}
+#contents .board table td {
+  padding: 30px;
+  border-bottom: 1px solid #ddd;
+}
+#contents .pagination {
+  padding: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contents .pagination .prev {
+  background: url("/images/page_prev.png") center center no-repeat;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  display: inline-block;
+}
+#contents .pagination .next {
+  background: url("/images/page_next.png") center center no-repeat;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  display: inline-block;
+}
+#contents .pagination span {
+  cursor: pointer;
+}
+#contents .pagination span a {
+  display: inline-block;
+  cursor: pointer;
+  padding: 15px;
+}
+#contents #searchArea form {
+  display: inline-flex;
+  gap: 5px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+#contents #searchArea form .category {
+  height: 45px;
+  width: 150px;
+}
+#contents #searchArea form input {
+  width: 300px;
+}
+#contents #searchArea form button {
+  background: #000;
+  color: #fff;
+  height: 45px;
+  width: 80px;
+}
+
+.space80 {
+  height: 80px;
+}

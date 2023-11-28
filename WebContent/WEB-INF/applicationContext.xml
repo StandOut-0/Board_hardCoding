@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- resources location설정 -->
+	<mvc:resources mapping="/resources/**"
+		location="/resources/" />
+
+	<!-- Spring MVC의 애노테이션 기반 컨트롤러를 활성화합니다. -->
+	<mvc:annotation-driven />
+
+	<!-- 컴포넌트 스캔을 통해 지정된 패키지에서 빈으로 등록할 클래스를 찾습니다. -->
+	<context:component-scan
+		base-package="com.sanghee.board" />
+
+	<!-- ViewResolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="2" />
+	</bean>
+
+	<!-- 외부 properties 파일을 로드하는 PropertyPlaceholderConfigurer 설정 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"
+			value="/WEB-INF/config/jdbc.properties" />
+	</bean>
+
+	<!-- 데이터베이스 설정 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="${spring.datasource.driverClassName}" />
+		<property name="url" value="${spring.datasource.url}" />
+		<property name="username"
+			value="${spring.datasource.username}" />
+		<property name="password"
+			value="${spring.datasource.password}" />
+	</bean>
+
+	<!-- JdbcTemplate 설정 -->
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation"
+			value="classpath:/mybatis/mybatis-config.xml"></property>
+		<property name="mapperLocations"
+			value="classpath*:/mybatis/sql/*.xml"></property>
+	</bean>
+
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg name="sqlSessionFactory"
+			ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions" value="classpath*:tiles/*.xml" />
+	</bean>
+
+	<bean id="tilesViewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<property name="order" value="1" />
+	</bean>
+
+
+</beans>
